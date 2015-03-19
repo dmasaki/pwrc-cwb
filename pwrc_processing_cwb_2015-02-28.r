@@ -31,10 +31,15 @@ cwb_temp <- cwb_temp[-1,] # remove first row
 
 row.names(cwb_temp)<-NULL # remove row.names column
 
+# add resource url to bison ipt entry
+
+bsncwb$resource_url<-"http://bison.ornl.gov/ipt/resource.do?r=usgs_pwrc_us_colonial_waterbirds"
+
 # review scientific names and clean
 
 uspecies_cwb<-unique(cwb_temp$clean_provided_scientific_name)
 
+cwb_temp$clean_provided_scientific_name<-gsub(" sp","",cwb_temp$clean_provided_scientific_name,fixed=TRUE)
 
 
 # subset for review
@@ -57,7 +62,7 @@ rm(cwb_subset100000)
 
 # write out final bbl data
 
-write.table(cwb_temp, file = "bison_cwb_ordered_final_2015-02-28.txt", append = FALSE, quote = FALSE, sep= "\t", eol = "\n", na = "", dec = ".", row.names = FALSE, col.names = TRUE)
+write.table(cwb_temp, file = "bison_cwb_ordered_final_2015-03-19.txt", append = FALSE, quote = FALSE, sep= "\t", eol = "\n", na = "", dec = ".", row.names = FALSE, col.names = TRUE)
 
 
 
