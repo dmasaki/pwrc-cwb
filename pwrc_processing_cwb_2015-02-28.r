@@ -64,5 +64,10 @@ rm(cwb_subset100000)
 
 write.table(cwb_temp, file = "bison_cwb_ordered_final_2015-03-19.txt", append = FALSE, quote = FALSE, sep= "\t", eol = "\n", na = "", dec = ".", row.names = FALSE, col.names = TRUE)
 
+# modify resource name 05-13-2015
+
+cwb <- read.delim("C:/Users/derek/R/projects/pwrc-cwb/bison_cwb_ordered_final_2015-03-19.txt", stringsAsFactors=FALSE)
+
+write.table(cwb_temp, file = "bison_cwb_ordered_final_2015-03-19.txt", append = FALSE, quote = FALSE, sep= "\t", eol = "\n", na = "", dec = ".", row.names = FALSE, col.names = TRUE)
 
 
